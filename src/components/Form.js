@@ -1,26 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
+import '../scss/form.scss';
 
-const Form = () => {
-    const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(`Tittel: ${title}, Innhold: ${content}`);
-    }
-
+const Form = ({ title, setTitle, content, setContent }) => {
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form>
             <div className='title'>
                 <label className='title__item title__item-label' htmlFor='title'>Title</label>
-                <input className='title__item title__item-input' type='text' id='title'value={title}
-                onChange={(event) => setTitle(event.target.value)}/>
+                <textarea 
+                  className='title__item title__item-input' 
+                  type='text' 
+                  id='title' 
+                  value={title}
+                  onChange={(event) => setTitle(event.target.value)}
+                />
             </div>
             <div className='content'>
-            <label className='content__item content__item-label' htmlFor='title'>Title</label>
-                <input className='content__item content__item-input' type='text' id='title'value={title}
-                onChange={(event) => setTitle(event.target.value)}/>
+            <label className='content__item content__item-label' htmlFor='title'>Content</label>
+                <textarea 
+                  className='content__item content__item-input' 
+                  type='text' 
+                  id='title'
+                  value={content}
+                  onChange={(event) => setContent(event.target.value)}
+                />
             </div>
         </form>
     );

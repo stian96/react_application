@@ -1,0 +1,33 @@
+@import 'variables.scss';
+
+.todo-card {
+    padding: 0.5rem 1.5rem 1.3rem 1.5rem;
+    border-radius: 5px;
+    box-shadow: -3px 8px 12px 5px rgb(110, 217, 206, 0.14);
+
+    .todo-card__item-title {
+        font-size: 1rem;
+
+    }
+
+    .todo-card__item-content {
+        font-size: 0.9rem;
+        color: rgb(0, 0, 0, 0.60);
+        font-weight: 100;
+        line-height: 1.3rem;
+    }
+
+    .todo-card__item-button {
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        border-radius: 5px;
+
+        background: $button-color;
+        color: $navbar-color;
+
+        font-weight: bold;
+        font-size: 0.8rem;
+
+        padding: 0.2rem 0.5rem;
+        float: right;
+    }
+}

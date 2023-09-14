@@ -1,0 +1,19 @@
+@import 'variables';
+
+.add-button {
+    width: 8.8rem;
+    height: 2.6rem;
+
+    float: right;
+    
+    margin-right: 15.5rem;
+    margin-top: -3rem;
+
+    background: $button-color;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    border-radius: 5px;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $navbar-color;
+}
