@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Form from './components/Form';
 import Button from './components/Button';
-import Todo from './components/Todo';
+import Todos from './components/Todos';
 
 import './App.scss';
 
@@ -19,6 +19,12 @@ const App = () => {
         setContent('');
     }
 
+    const removeTodo = (index) => {
+        const newTodos = [...todos];
+        newTodos.splice(index, 1);
+        setTodos(newTodos);
+    }
+
     return (
         <>
         <Navbar />
@@ -29,12 +35,11 @@ const App = () => {
           setContent={setContent}
         />
         <Button onClick={handleSubmit}/>
-        <h2>My Todos</h2>
-        <div className='todo-list'>
-            {todos.map((todo, index) => (
-                <Todo key={index} title={todo.title} content={todo.content} />
-            ))}
-        </div>
+        { todos.length > 0 && <h2>My Todos</h2>}
+        <Todos 
+          todos={todos}
+          removeTodo={removeTodo}
+        />
         </>
     );
 }
